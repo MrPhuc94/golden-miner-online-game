@@ -340,3 +340,12 @@ canvas {
     top:30%;
     transition: opacity 1s;
 }
+
+#logoBrands{
+    margin: 10px 200px;
+    position:absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

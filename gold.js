@@ -83,7 +83,7 @@ function init() {   //初始化函数
     // gameBoard.style.left = ((window.innerWidth - 720) / 2).toString() + 'px';
     // gameBoard.style.top = ((window.innerHeight - 510) / 2).toString() + 'px';
     intro.play();
-    time_all = 300;
+    time_all = 90;
     players.splice(0, players.length);
     key_W.style.display = "none";
     key_S.style.display = "none";
@@ -1325,18 +1325,18 @@ function gold(x, y, size) {
     switch (size) {
         case 1: {
             //this.r = canvas.width / 40;
-            this.r = 20;
-            this.value = 50;
+            this.r = 30;
+            this.value = 30;
         }
             break;
         case 2: {
             //this.r = canvas.width / 40;
-            this.r = 25;
+            this.r = 60;
             this.value = 100;
         }
             break;
         case 3: {
-            this.r = 45;
+            this.r = 100;
             this.value = 250;
         }
             break;
@@ -1360,11 +1360,11 @@ gold.prototype = {
         var goldImg = new Image();
         goldImg.src = "img/gold.png";
         if (this.size == 1)
-            ctx.drawImage(goldImg, this.x - 30, this.y - 35, 50, 50);
+            ctx.drawImage(goldImg, this.x - 30, this.y - 35, 30, 30);
         else if (this.size == 2)
-            ctx.drawImage(goldImg, this.x - 45, this.y - 50, 90, 90);
+            ctx.drawImage(goldImg, this.x - 45, this.y - 50, 60, 60);
         else if (this.size == 3)
-            ctx.drawImage(goldImg, this.x - 80, this.y - 85, 150, 150);
+            ctx.drawImage(goldImg, this.x - 80, this.y - 85, 100, 100);
     },
 }
 function stone(x, y, size) {
@@ -1403,9 +1403,9 @@ stone.prototype = {
         var stoneImg = new Image();
         stoneImg.src = "img/stone.png";
         if (this.size == 1)
-            ctx.drawImage(stoneImg, this.x - 15, this.y - 20, 30, 30);
+            ctx.drawImage(stoneImg, this.x - 15, this.y - 20, 50, 50);
         if (this.size == 2)
-            ctx.drawImage(stoneImg, this.x - 30, this.y - 25, 60, 60);
+            ctx.drawImage(stoneImg, this.x - 30, this.y - 25, 80, 80);
     },
 }
 function diamond(x, y) {
@@ -1719,7 +1719,7 @@ function player(num) {
     }
     this.y = 35;
     this.width = 50;
-    this.height = 50;
+    this.height = 90;
     this.money = 0;
     this.color = "blue";
     this.hook = new hook(this.x + this.width / 2);
@@ -1752,7 +1752,7 @@ function hook(x) {
     this.object = 0;
     this.status = 0;
     this.length = 0;
-    this.moveSpeed = 10;
+    this.moveSpeed = 100;
     this.rotateSpeed = 5;
     this.r = 10;
     this.maxLength = 500;
