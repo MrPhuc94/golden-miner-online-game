@@ -41,7 +41,7 @@ var mapCanvas = document.getElementById('mapCanvas');
 var gameLines = document.getElementById('gameLines');
 var gameBoard = document.getElementById('gameBoard');
 var gameStart = document.getElementById('gameStart');
-var gameHelp = document.getElementById('gameHelp');
+// var gameHelp = document.getElementById('gameHelp');
 var gameAbout = document.getElementById('gameAbout');
 var gameQuit = document.getElementById('gameQuit');
 var gameMode = document.getElementById('gameMode');
@@ -134,14 +134,14 @@ function closeWordsWait() {
     var name = document.getElementById('name');
     name.style.display = 'block';
     gameStart.style.display = 'block';
-    gameHelp.style.display = 'block';
+    // gameHelp.style.display = 'block';
     gameAbout.style.display = 'block';
     gameQuit.style.display = 'block';
     gameWords.style.lineHeight = '450px';
     gameWords.style.display = 'none';
     name.style.opacity = 0;
     gameStart.style.opacity = 0;
-    gameHelp.style.opacity = 0;
+    // gameHelp.style.opacity = 0;
     gameAbout.style.opacity = 0;
     gameQuit.style.opacity = 0;
     setTimeout('setgameBoard()', 1000);
@@ -151,7 +151,7 @@ function setgameBoard() {          //打开游戏面板
 
     name.style.opacity = 1;
     gameStart.style.opacity = 1;
-    gameHelp.style.opacity = 1;
+    // gameHelp.style.opacity = 1;
     gameAbout.style.opacity = 1;
     gameQuit.style.opacity = 1;
 }
@@ -159,7 +159,7 @@ gameStart.onclick = function () {
     var name = document.getElementById('name');
     name.style.display = 'none';
     gameStart.style.display = 'none';
-    gameHelp.style.display = 'none';
+    // gameHelp.style.display = 'none';
     gameAbout.style.display = 'none';
     gameQuit.style.display = 'none';
     singleMode.style.display = 'block';
@@ -200,34 +200,34 @@ pairMode.onclick = function () {
     initGameGradient();
     intro.pause();
 }
-gameHelp.onclick = function () {
-    var name = document.getElementById('name');
-    gameWords.style.lineHeight = '60px';
-    gameWords.innerHTML = '<br>帮助<br><br>单人模式：上/W键炸弹，下/S键钩取 <br> 双人模式：左边上键炸弹，下键钩取; 右边W键炸弹，S键钩取<br><br><br><div id = "back" style = "position: relative; ">返回</div>';
-    gameWords.style.display = 'block';
-    gameWords.style.opacity = 1;
-    name.style.display = 'none';
-    gameStart.style.display = 'none';
-    gameHelp.style.display = 'none';
-    gameAbout.style.display = 'none';
-    gameQuit.style.display = 'none';
+// gameHelp.onclick = function () {
+//     var name = document.getElementById('name');
+//     gameWords.style.lineHeight = '60px';
+//     gameWords.innerHTML = '<br>Trợ giúp<br><br>Chế độ chơi đơn: Phím Lên/W để ném bom, phím xuống/S để móc <br> Chế độ hai người chơi: Sử dụng nút lên ở bên trái để ném bom và nút xuống ở bên phải để ném bom và nút S ở bên phải để móc. <br><br><br><div id = "back" style = "position: relative; ">Quay về</div>';
+//     gameWords.style.display = 'block';
+//     gameWords.style.opacity = 1;
+//     name.style.display = 'none';
+//     gameStart.style.display = 'none';
+//     gameHelp.style.display = 'none';
+//     gameAbout.style.display = 'none';
+//     gameQuit.style.display = 'none';
 
-    var gameBack = document.getElementById('back');
-    gameBack.onclick = function () {
-        closeWordsWait();
-    }
-    gameBack.onmousemove = moveTo;
-    gameBack.onmouseleave = leaveFrom;
-}
+//     var gameBack = document.getElementById('back');
+//     gameBack.onclick = function () {
+//         closeWordsWait();
+//     }
+//     gameBack.onmousemove = moveTo;
+//     gameBack.onmouseleave = leaveFrom;
+// }
 gameAbout.onclick = function () {
-    gameWords.innerHTML = '<br>关于<br><br>这是一个效仿黄金矿工的小游戏，欢迎试玩后提供反馈意见。<br>打赏请联系wjc，有bug请联系joy。<br><br><br><div id = "back" style = "position: relative;">返回</div>';
+    gameWords.innerHTML = '<br>TEAM 2<br><br><div id = "back" style = "position: relative;">Nguyen Minh Quan - s3926391 <br> Nguyen Dinh Vinh - s4023247 <br>Nguyen Hong Dung - s3914462<br> Pham Tung Lam - s3926699 <br> Nguyen Thanh Ha - s3976458</div>';
     var name = document.getElementById('name');
     gameWords.style.lineHeight = '60px';
     gameWords.style.display = 'block';
     gameWords.style.opacity = 1;
     name.style.display = 'none';
     gameStart.style.display = 'none';
-    gameHelp.style.display = 'none';
+    // gameHelp.style.display = 'none';
     gameAbout.style.display = 'none';
     gameQuit.style.display = 'none';
 
