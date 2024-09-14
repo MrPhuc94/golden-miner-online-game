@@ -118,7 +118,7 @@ function init() {   //初始化函数
     gameWords.style.lineHeight = '450px';
     gameWords.style.fontSize = 70;
     gameWords.style.color = "#472226";
-    gameWords.innerHTML = '<h2>Chào mừng đến với thế giới của Panasonic</h2>';
+    gameWords.innerHTML = '<h2>A Game presented to you by Team 2</h2>';
     gameWords.style.display = 'block';
     setTimeout('openWords()', 1000);     //开场文字
 }
