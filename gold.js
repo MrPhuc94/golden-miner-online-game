@@ -83,7 +83,7 @@ function init() {   //初始化函数
     // gameBoard.style.left = ((window.innerWidth - 720) / 2).toString() + 'px';
     // gameBoard.style.top = ((window.innerHeight - 510) / 2).toString() + 'px';
     intro.play();
-    time_all = 60;
+    time_all = 300;
     players.splice(0, players.length);
     key_W.style.display = "none";
     key_S.style.display = "none";
@@ -112,13 +112,13 @@ function init() {   //初始化函数
     money.style.display = "none";
     shopName.style.display = "none";
     //  key_W.style.left = canvas.width/2;
-    bg.style.backgroundImage = "url(img/open.jpg)"
+    bg.style.backgroundImage = "url(img/backgrounDaoVang.png)"
     bg.style.opacity = 0.7;
     //   gameBoard.style.backgroundColor = '#8D8DD4';
     gameWords.style.lineHeight = '450px';
     gameWords.style.fontSize = 70;
     gameWords.style.color = "#472226";
-    gameWords.innerHTML = '<h2>欢迎进入黄鸡矿工的世界</h2>';
+    gameWords.innerHTML = '<h2>Chào mừng đến với thế giới của Panasonic</h2>';
     gameWords.style.display = 'block';
     setTimeout('openWords()', 1000);     //开场文字
 }
@@ -317,7 +317,7 @@ function createLevel(level) {
     }
     switch (level) {
         case 1: {
-            bg.style.backgroundImage = "url(img/bg1.jpg)";
+            bg.style.backgroundImage = "url(img/bginGame.webp)";
             goal = 700;
             gold_arr.splice(0, gold_arr.length);
             stone_arr.splice(0, stone_arr.length);
@@ -925,16 +925,16 @@ function draw_bomb() {
 }
 function draw_time_limit() {
 
-    ctx.fillStyle = "gray";
-    ctx.font = "bold 20px ppFont";
+    ctx.fillStyle = "blue";
+    ctx.font = "bold 20px Bangers-Regular";
     ctx.fillText("Time:", 700, 40);
     ctx.fillText(time_all.toString(), 800, 40);
     ctx.fillText("Level:", 700, 80);
     ctx.fillText(level.toString(), 800, 80);
 }
 function draw_score() {
-    ctx.fillStyle = "gray";
-    ctx.font = "bold 20px ppFont";
+    ctx.fillStyle = "blue";
+    ctx.font = "bold 20px Bangers-Regular";
     ctx.fillText("Money:", 10, 40);
     //total_money = 0;
     //for (var i = 0; i < players.length; i++)
