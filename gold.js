@@ -669,6 +669,26 @@ function createLevel(level) {
             }
         }
     }
+
+    document.addEventListener('click', (event) => {
+        console.log('Window clicked at:', event.clientX, event.clientY);
+        if (!game_end && !game_pause) {
+            if (mode == 1) {
+                if (players[1].hook.status == 0) {
+                    players[1].hook.status = 1;
+                    timeUpdate();
+
+                }
+            } else {
+                if (players[0].hook.status == 0) {
+                    players[0].hook.status = 1;
+                    timeUpdate();
+
+                }
+            }
+        }
+      });
+    
     key_down.onclick = function () {
         if (!game_end && !game_pause) {
             if (mode == 1) {
