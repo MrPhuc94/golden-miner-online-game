@@ -177,7 +177,9 @@ canvas {
   width: 98vw;
   height: 97vh;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  background-size: auto;
   transition: background 1s;
 }
 #gameLoseBoard {

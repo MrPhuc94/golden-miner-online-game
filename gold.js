@@ -245,12 +245,12 @@ function initGameGradient() {
     gameWords.style.display = 'none';
     mapCanvas.style.display = 'block';
     gameLines.style.display = 'block';
-    key_W.style.display = "block";
+    key_W.style.display = "none";
     exit_level.style.display = "block";
     pause.style.display = "block";
-    key_S.style.display = "block";
-    key_up.style.display = "block";
-    key_down.style.display = "block";
+    key_S.style.display = "none";
+    key_up.style.display = "none";
+    key_down.style.display = "none";
     key_W.innerHTML = 'W';
     key_S.innerHTML = 'S';
     key_up.innerHTML = 'up';
@@ -905,18 +905,18 @@ function draw_all() {
                     players[i].hook.money_size += 2;
                     players[i].hook.money_pos_x -= 9;
                     players[i].hook.money_pos_y -= 5;
-                    ctx.fillStyle = "gray";
+                    ctx.fillStyle = "black";
                     ctx.font = "bold " + players[i].hook.money_size.toString() + "px ppFont";
                     ctx.fillText('$' + players[i].hook.money_value.toString(), players[i].hook.money_pos_x, players[i].hook.money_pos_y);
                 } else if (players[i].hook.money_status == 3) {
                     players[i].hook.money_size -= 2;
                     players[i].hook.money_pos_x -= 8;
                     players[i].hook.money_pos_y -= 5;
-                    ctx.fillStyle = "gray";
+                    ctx.fillStyle = "black";
                     ctx.font = "bold " + players[i].hook.money_size.toString() + "px ppFont";
                     ctx.fillText('$' + players[i].hook.money_value.toString(), players[i].hook.money_pos_x, players[i].hook.money_pos_y);
                 } else if (players[i].hook.money_status == 2) {
-                    ctx.fillStyle = "gray";
+                    ctx.fillStyle = "black";
                     ctx.font = "bold " + players[i].hook.money_size.toString() + "px ppFont";
                     ctx.fillText('$' + players[i].hook.money_value.toString(), players[i].hook.money_pos_x, players[i].hook.money_pos_y);
                 }
@@ -1100,7 +1100,7 @@ function drawEnd() {
     score.style.display = "block";
     score.innerHTML = "Score:" + total_money.toString() + "<br><br>" + "Goal:" + goal.toString();
     restart.style.display = "block";
-    restart.style.color = "gray";
+    restart.style.color = "black";
     restart.onclick = function () {
         clearCanvas();
         gameLoseBoard.style.display = "none";
@@ -1309,10 +1309,10 @@ function enterShop() {//商店
         cursor.play();
         time_all = 60;
         mapCanvas.style.display = 'block';
-        key_W.style.display = 'block';
-        key_S.style.display = 'block';
-        key_up.style.display = 'block';
-        key_down.style.display = 'block';
+        key_W.style.display = 'none';
+        key_S.style.display = 'none';
+        key_up.style.display = 'none';
+        key_down.style.display = 'none';
         exit_level.style.display = "block";
         pause.style.display = "block";
         money.style.display = 'none';
@@ -1378,6 +1378,7 @@ gold.prototype = {
             this.y += this.moveSpeed * Math.sin((this.owner.angle) * Math.PI / 180);
         }
         var goldImg = new Image();
+        goldImg.style.objectFit ="cover";
         goldImg.src = "img/gold.png";
         if (this.size == 1)
             ctx.drawImage(goldImg, this.x - 30, this.y - 35, 30, 30);
@@ -1804,7 +1805,7 @@ hook.prototype = {
             ctx.rotate(this.rotateSpeed * Math.PI / 180);
             ctx.lineWidth = 1;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = "gray";
+            ctx.strokeStyle = "black";
             ctx.beginPath();
             ctx.moveTo(0, 0);
             this.x = 30 * Math.cos(this.angle * Math.PI / 180);
@@ -1813,7 +1814,7 @@ hook.prototype = {
             ctx.stroke();
             ctx.lineWidth = 3;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = "gray";
+            ctx.strokeStyle = "black";
             ctx.beginPath();
             ctx.arc(this.x + this.r * Math.cos((this.angle) * Math.PI / 180), this.y + this.r * Math.sin((this.angle) * Math.PI / 180), this.r,
                (90 + this.angle) * Math.PI / 180, (270 + this.angle) * Math.PI / 180);
@@ -1828,13 +1829,13 @@ hook.prototype = {
             ctx.beginPath();
             ctx.lineWidth = 1;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = "gray";
+            ctx.strokeStyle = "black";
             ctx.moveTo(this.owner.x + this.owner.width / 2, this.owner.y + this.owner.height);
             ctx.lineTo(this.x, this.y);
             ctx.stroke();
             ctx.lineWidth = 3;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = "gray";
+            ctx.strokeStyle = "black";
             ctx.beginPath();
             ctx.arc(this.x + this.r * Math.cos((this.angle) * Math.PI / 180), this.y + this.r * Math.sin((this.angle) * Math.PI / 180),
                     this.r, (this.angle + 90) * Math.PI / 180, (this.angle - 90) * Math.PI / 180);
@@ -1845,7 +1846,7 @@ hook.prototype = {
             this.y += this.moveSpeed * Math.sin((this.angle) * Math.PI / 180);
             ctx.lineWidth = 1;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = "gray";
+            ctx.strokeStyle = "black";
             ctx.beginPath();
 
             ctx.moveTo(this.owner.x + this.owner.width / 2, this.owner.y + this.owner.height);
@@ -1853,7 +1854,7 @@ hook.prototype = {
             ctx.stroke();
             ctx.lineWidth = 3;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = "gray";
+            ctx.strokeStyle = "black";
             ctx.beginPath();
             ctx.arc(this.x + this.r * Math.cos((this.angle) * Math.PI / 180), this.y + this.r * Math.sin((this.angle) * Math.PI / 180),
                     this.r, (this.angle + 90) * Math.PI / 180, (this.angle - 90) * Math.PI / 180);
